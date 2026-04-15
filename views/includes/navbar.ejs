@@ -56,13 +56,21 @@
 
 </script>
 
-  <div class="navbar-nav ms-auto">
+  <!-- <div class="navbar-nav ms-auto">
         <% if(!currUser) { %>
         <a class="nav-link active" href="/signup"><b>Sign up</b></a>
         <a class="nav-link" href="/login"><b>Login</b></a>
         <% } %> <% if(currUser) { %>
         <a class="nav-link" href="/logout">Logout </a>
         <% } %>
+  </div> -->
+  <div class="navbar-nav ms-auto">
+    <% if (typeof currUser === "undefined" || !currUser) { %>
+      <a class="nav-link active" href="/signup"><b>Sign up</b></a>
+      <a class="nav-link" href="/login"><b>Login</b></a>
+    <% } else { %>
+      <a class="nav-link" href="/logout">Logout</a>
+    <% } %>
   </div>
     </div>
   </div>
